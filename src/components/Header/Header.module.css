@@ -1,0 +1,32 @@
+.HeaderContainer {
+    width: 100%;
+    height: 114px;
+    border: 2px solid rgb(224, 151, 151);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 100;
+    background-image: url(//static-basket-01.wbbasket.ru/vol2/site/i/v3/header/background_oblaka_2025.webp);
+    background-size: 100% 100%;
+    padding: 12px 0;
+    position: relative;
+    padding: 8px 0 16px;
+    position: fixed;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    color: #1212125e;
+    font-family: Georgia, serif;
+    text-transform: uppercase;
+}
+.item:hover {
+    color: black;
+}
+.activeItem {
+    color: black;
+}

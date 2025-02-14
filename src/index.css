@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Custom Promo Filter */
+:root {
+    --custom-promo-filter-color: #ffffff;
+    --custom-promo-filter-background: #c12ae7;
+    --custom-promo-filter-switch-color: #5d18ff;
+    --custom-promo-filter-switch-background: #ffffff;
+    --custom-promo-filter-switch-active-color: #ffffff;
+    --custom-promo-filter-switch-active-background: #5d18ff;
+    --scroll-top: 0;
+}
+
+/* Theme: Light */
+:root,
+[data-theme='light'] {
+    --switch-bg-default-on: var(--brand-600);
+    --switch-bg-hovered-on: var(--brand-650);
+    --switch-bg-pressed-on: var(--brand-700);
+    --switch-bg-disabled-on: var(--brand-900);
+    --switch-bg-default-off: var(--neutral-900);
+    --switch-bg-hovered-off: var(--neutral-850);
+    --switch-bg-pressed-off: var(--neutral-800);
+    --switch-bg-disabled-off: var(--opacity-gray-5);
+    --switch-circle-default: var(--neutral-1000);
+    --switch-circle-disabled: var(--neutral-1000);
+    --switch-icon-disabled: var(--neutral-900);
+}
+
+/* Radio Button */
+:root,
+[data-theme='light'] {
+    --radio-button-content-default-on: var(--brand-600);
+    --radio-button-content-hovered-on: var(--brand-650);
+    --radio-button-content-pressed-on: var(--brand-700);
+    --radio-button-content-disabled-on: var(--neutral-960);
+    --radio-button-content-error-on: var(--danger-570);
+    --radio-button-content-default-off: var(--neutral-900);
+    --radio-button-content-hovered-off: var(--neutral-850);
+    --radio-button-content-pressed-off: var(--neutral-800);
+    --radio-button-content-disabled-off: var(--neutral-960);
+    --radio-button-content-error-off: var(--danger-570);
+}
+
+/* Icons */
+:root,
+[data-theme='light'] {
+    --icon-primary: var(--brand-600);
+    --icon-primary-hovered: var(--brand-500);
+    --icon-primary-pressed: var(--brand-400);
+    --icon-secondary: var(--neutral-800);
+    --icon-secondary-hovered: var(--neutral-750);
+    --icon-secondary-pressed: var(--neutral-600);
+    --icon-tertiary: var(--neutral-900);
+    --icon-contrast: var(--neutral-100);
+    --icon-contrast-inverted: var(--neutral-960);
+    --icon-success: var(--success-400);
+    --icon-danger: var(--danger-570);
+    --icon-warning: var(--warning-600);
+    --icon-white-const: var(--neutral-1000);
+    --icon-black-const: var(--neutral-100);
+}
+
+/* Checkbox */
+:root,
+[data-theme='light'] {
+    --checkbox-content-default-on: var(--neutral-1000);
+    --checkbox-content-default-off: var(--opacity-white-0);
+    --checkbox-content-hovered-off: var(--neutral-850);
+    --checkbox-content-pressed-off: var(--neutral-800);
+    --checkbox-content-disabled-off: var(--opacity-white-0);
+    --checkbox-content-disabled-on: var(--neutral-1000);
+    --checkbox-content-error-off: var(--opacity-white-0);
+    --checkbox-bg-default-on: var(--brand-600);
+    --checkbox-bg-hovered-on: var(--brand-650);
+    --checkbox-bg-pressed-on: var(--brand-700);
+    --checkbox-bg-disabled-on: var(--brand-900);
+    --checkbox-bg-error-on: var(--danger-570);
+    --checkbox-bg-default-off: var(--neutral-900);
+    --checkbox-bg-hovered-off: var(--neutral-850);
+    --checkbox-bg-pressed-off: var(--neutral-800);
+    --checkbox-bg-disabled-off: var(--neutral-960);
+    --checkbox-bg-error-off: var(--danger-570);
+}
+
+/* Buttons */
+:root,
+[data-theme='light'] {
+    --button-primary-bg-default: var(--brand-600);
+    --button-primary-bg-hovered: var(--brand-650);
+    --button-primary-bg-pressed: var(--brand-700);
+    --button-primary-bg-disabled: var(--neutral-960);
+    --button-primary-content-default-primary: var(--neutral-1000);
+    --button-primary-content-default-secondary: var(--opacity-white-75);
+    --button-primary-content-disabled-primary: var(--neutral-850);
+    --button-primary-content-disabled-secondary: var(--neutral-850);
+}
+
+/* Loader */
+:root,
+[data-theme='light'] {
+    --loader-primary: var(--brand-600);
+    --loader-secondary: var(--neutral-800);
+    --loader-white-const: var(--neutral-1000);
+    --loader-error: var(--danger-570);
+}
+
+/* Borders and Spacing */
+:root {
+    --br-0: 0px;
+    --br-1: 4px;
+    --br-2: 8px;
+    --br-3: 12px;
+    --br-4: 16px;
+    --br-5: 20px;
+    --br-6: 24px;
+    --br-7: 28px;
+    --br-8: 32px;
+    --br-10: 40px;
+    --br-full: 100px;
+    --sp-0: 0px;
+    --sp-1: 4px;
+    --sp-2: 8px;
+    --sp-3: 12px;
+    --sp-4: 16px;
+    --sp-5: 20px;
+    --sp-6: 24px;
+    --sp-8: 32px;
+    --sp-10: 40px;
+}
+
+/* General Styles */
+html {
+    font-variation-settings: 'wght' 450;
+    color: #242424;
+    text-rendering: geometricPrecision;
+    background: #fff;
+    font-family: Hauss, Segoe UI, -apple-system, Roboto, Helvetica Neue, Noto Sans, Arial, sans-serif, Apple Color Emoji,
+        Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 16px;
+    font-weight: 400;
+}

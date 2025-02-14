@@ -1,0 +1,13 @@
+.svgLogo {
+    width: 221px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+.svgContainer {
+    justify-content: center;
+    align-items: center;
+    width: 216px;
+    height: 58px;
+    margin-right: 16px;
+    display: flex;
+}
