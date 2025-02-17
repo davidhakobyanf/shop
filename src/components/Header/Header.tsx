@@ -2,22 +2,20 @@ import { useState } from 'react';
 import Input from '../Input/Input';
 import LogoSvg from '../LogoSvg/LogoSvg';
 import styles from './Header.module.css';
-import { DataSvg } from '../../data/dataSvg';
+import { useFormState } from '../hook/useFormState';
 const Header = () => {
-    const [text, setText] = useState('');
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { value } = e.target;
-        setText(value);
-        console.log(value, 'value');
-    };
+    const { initialValue, handleChange } = useFormState({ name: '' });
+    console.log(initialValue, 'initialValue');
+
     return (
         <div className={styles.HeaderContainer}>
             <LogoSvg />
             <Input
-                placeholder='Найти на Wildberries'
-                value={text}
+                placeholder={'Найти на Wildberries' as string}
+                value={initialValue.name as}
                 variant='searchInput'
-                onChange={(e) => handleChange(e)}
+                onChange={handleChange}
+                name={'name'}
             />
         </div>
     );
