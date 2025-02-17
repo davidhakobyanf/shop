@@ -17,3 +17,5 @@ export interface shopItemType {
     rating: rating;
     imageUrl: string;
 }
+export interface CardItemTextType extends Omit<shopItemType, 'id' | 'imageUrl'> {}
+export interface CardItem extends Omit<shopItemType, 'id'> {}

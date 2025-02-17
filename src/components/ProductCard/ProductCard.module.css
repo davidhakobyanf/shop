@@ -1,0 +1,13 @@
+.productCardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    height: 405px;
+    border-radius: 12px;
+    background: #f4e7ff !important;
+    flex-shrink: 0;
+    width: 250px;
+    margin: 0 4px 32px;
+    position: relative;
+    cursor: pointer;
+}

@@ -1,0 +1,24 @@
+.searchInput {
+    border-radius: 16px;
+    padding: 18px 100px 17px 20px;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: inherit;
+    color: #242424;
+    background: #fff;
+    border: none;
+    outline: none;
+    position: relative;
+}
+::placeholder {
+    color: rgb(169, 168, 176);
+    opacity: 1; /* Firefox */
+}
+.defInput {
+    height: 36px;
+    padding: 6px 12px;
+    background-color: #e8e8f0;
+    outline: 2px solid var(--custom-promo-filter-switch-active-background);
+    border-radius: 16px;
+    color: #242424;
+}

@@ -1,0 +1,10 @@
+.cardTextContaier {
+    display: flex;
+    flex-direction: column;
+    color: var(--custom-promo-filter-switch-color);
+    width: 100%;
+    align-items: start;
+    justify-content: center;
+    height: calc(100% - 310px);
+    padding: 35px 10px 0 10px;
+}
