@@ -25,6 +25,10 @@
     width: 124px;
     transition: background-color 0.5s ease-in-out;
 }
+.defInput:hover {
+    background-color: #e8e8f0;
+    border-color: #e8e8f0;
+}
 .defInput:focus {
     background-color: white;
     outline: 3px solid var(--custom-promo-filter-background);

@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #c61aff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    user-select: none;
+    margin-right: 20px;
+}
+
+.spanText {
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.toggle {
+    width: 36px;
+    height: 20px;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.toggle .circle {
+    width: 16px;
+    height: 16px;
+    background: #6e00ff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    transition: left 0.3s;
+}
+
+.checked {
+    background: #6e00ff;
+}
+
+.checked .circle {
+    left: 18px;
+    background: #fff;
+}

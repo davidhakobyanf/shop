@@ -7,8 +7,8 @@ const PriceFilter = () => {
             <div className={styles.priceContainer}>
                 <p>От</p>
                 <p>До</p>
-                <Input variant={'defInput'} type='number' />
-                <Input variant={'defInput'} type='number' />
+                <Input variant={'defInput'} type='number' placeholder='0' />
+                <Input variant={'defInput'} type='number' placeholder='0' />
             </div>
             <div>
                 <Button value='Готово' />
