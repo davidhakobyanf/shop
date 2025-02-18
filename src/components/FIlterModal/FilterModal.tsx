@@ -18,21 +18,16 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, children }) 
         };
 
         if (isOpen) {
-            document.addEventListener("mousedown", handleClickOutside);
+            document.addEventListener('mousedown', handleClickOutside);
         }
 
         return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [isOpen, onClose]);
 
     return (
-        <div
-            ref={modalRef}
-            className={styles.modal}
-            style={{ display: isOpen ? 'flex' : 'none' }}
-        >
-            {/* Добавляем буферный div */}
+        <div ref={modalRef} className={styles.modal} style={{ display: isOpen ? 'flex' : 'flex' }}>
             <div className={styles.buffer} />
             {children}
         </div>

@@ -12,13 +12,25 @@
 }
 ::placeholder {
     color: rgb(169, 168, 176);
-    opacity: 1; /* Firefox */
+    opacity: 1;
 }
 .defInput {
     height: 36px;
     padding: 6px 12px;
     background-color: #e8e8f0;
-    outline: 2px solid var(--custom-promo-filter-switch-active-background);
     border-radius: 16px;
     color: #242424;
+    border: none;
+
+    width: 124px;
+    transition: background-color 0.5s ease-in-out;
+}
+.defInput:focus {
+    background-color: white;
+    outline: 3px solid var(--custom-promo-filter-background);
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
 }

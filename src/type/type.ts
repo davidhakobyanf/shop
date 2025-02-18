@@ -1,3 +1,5 @@
+import { DataSvg } from '../data/dataSvg';
+
 export interface filter {
     category: categories[];
     brend: brands[];
@@ -19,3 +21,8 @@ export interface shopItemType {
 }
 export interface CardItemTextType extends Omit<shopItemType, 'id' | 'imageUrl'> {}
 export interface CardItem extends Omit<shopItemType, 'id'> {}
+export interface CatalogCategory {
+    id: number;
+    name: string;
+    icon: keyof typeof DataSvg;
+}

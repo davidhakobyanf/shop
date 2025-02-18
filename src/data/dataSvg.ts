@@ -8,4 +8,5 @@ export enum DataSvg {
     burgerIcon = burgerIconImg,
     filterIcon = filterIconImg,
     photoSearchIcon = photoSearchIconImg,
+    icon,
 }

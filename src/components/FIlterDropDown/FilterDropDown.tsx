@@ -1,6 +1,7 @@
-import React, { FC, useState } from "react";
-import styles from "./FilterDropDown.module.css";
-import FilterModal from "../FIlterModal/FilterModal.tsx";
+import React, { FC, useState } from 'react';
+import styles from './FilterDropDown.module.css';
+import FilterModal from '../FIlterModal/FilterModal.tsx';
+import PriceFilter from '../PriceFilter/PriceFilter.tsx';
 
 interface FilterDropDownProps {
     value: React.ReactNode;
@@ -19,14 +20,13 @@ const FilterDropDown: FC<FilterDropDownProps> = ({ icon, value, filter, modal })
     const handleMouseLeave = () => {
         setIsModalOpen(false);
     };
+    console.log(icon, 'icon');
 
     return (
         <div
-            className={`${styles.filterContainer} ${filter ? styles.filterActive : ""}`}
+            className={`${styles.filterContainer} ${filter ? styles.filterActive : ''}`}
             style={
-                icon
-                    ? { "--icon-url": `url("${icon}")` }
-                    : ({ padding: "8px 30px 8px 15px" } as React.CSSProperties)
+                icon ? { '--icon-url': `url("${icon}")` } : ({ padding: '8px 30px 8px 15px' } as React.CSSProperties)
             }
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -34,7 +34,7 @@ const FilterDropDown: FC<FilterDropDownProps> = ({ icon, value, filter, modal })
             {value}
             {modal && (
                 <FilterModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-                    <div>Модальное окно</div>
+                    <PriceFilter />
                 </FilterModal>
             )}
         </div>

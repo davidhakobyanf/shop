@@ -12,7 +12,7 @@ const Header = () => {
             <LogoSvg />
             <Input
                 placeholder={'Найти на Wildberries' as string}
-                value={initialValue.name as}
+                value={initialValue.name as string}
                 variant='searchInput'
                 onChange={handleChange}
                 name={'name'}

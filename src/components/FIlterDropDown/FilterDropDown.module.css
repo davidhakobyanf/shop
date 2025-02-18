@@ -11,10 +11,11 @@
     display: inline-flex;
     cursor: pointer;
     position: relative;
+    margin-right: 20px;
 }
 
 .filterContainer::before {
-    content: "";
+    content: '';
     background-image: var(--icon-url);
     background-position: center;
     background-repeat: no-repeat;
@@ -29,7 +30,7 @@
 }
 
 .filterActive::after {
-    content: "";
+    content: '';
     transform-origin: 3px 6px;
     border-color: #b9b9c1;
     border-bottom-style: solid;

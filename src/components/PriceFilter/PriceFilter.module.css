@@ -1,0 +1,16 @@
+.priceFilterContainer {
+    display: grid;
+    grid-template-rows: auto auto;
+    padding: 20px;
+    width: 296px;
+    height: 158px;
+}
+.priceContainer {
+    width: 256px;
+    height: 62px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-content: space-between;
+}
