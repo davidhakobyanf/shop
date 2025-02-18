@@ -27,7 +27,7 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, children }) 
     }, [isOpen, onClose]);
 
     return (
-        <div ref={modalRef} className={styles.modal} style={{ display: isOpen ? 'flex' : 'flex' }}>
+        <div ref={modalRef} className={styles.modal} style={{ display: isOpen ? 'flex' : 'none' }}>
             <div className={styles.buffer} />
             {children}
         </div>
