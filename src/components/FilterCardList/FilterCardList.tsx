@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import styles from './FilterCardList.module.css';
 import { data, imagePath } from '../../data/data';
 import ProductCard from '../ProductCard/ProductCard';
+import styles from './FilterCardList.module.css';
 
 const FilterCardList: FC = () => {
     return (

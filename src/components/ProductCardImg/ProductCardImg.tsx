@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import styles from './ProductCardImg.module.css';
+
 interface ProductType {
     img: string;
     alt?: string;

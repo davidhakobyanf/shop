@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import FilterDropDown from '../FIlterDropDown/FilterDropDown';
 import styles from './CatalogCategoryList.module.css';
-import { catalogFilter } from '../../data/data';
 import ToggleButton from '../ToggleButton/ToggleButton';
+import { catalogFilter } from '../../data/data';
 
 const CatalogCategoryList: React.FC = () => {
     const [isChecked, setIsChecked] = useState(false);

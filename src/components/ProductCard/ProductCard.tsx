@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import styles from './ProductCard.module.css';
+import { CardItem } from '../../type/type';
 import ProductCardImg from '../ProductCardImg/ProductCardImg';
 import ProductCardText from '../ProductCardText/ProductCardText';
-import { CardItem } from '../../type/type';
+import styles from './ProductCard.module.css';
 
 const ProductCard: FC<CardItem> = ({ name, brand, price, rating, category, imageUrl }) => {
     return (

@@ -1,7 +1,7 @@
-import styles from './Home.module.css';
 import FilterBlockDropDown from '../FilterCardList/FilterCardList.tsx';
-import { data } from '../../data/data.ts';
 import CatalogCategoryList from '../CatalogCategoryList/CatalogCategoryList.tsx';
+import { data } from '../../data/data.ts';
+import styles from './Home.module.css';
 
 const Home = () => {
     // const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {

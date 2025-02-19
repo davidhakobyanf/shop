@@ -1,6 +1,6 @@
 import Button from '../Button/Button';
-import { useFormState } from '../hook/useFormState';
 import Input from '../Input/Input';
+import { useFormState } from '../hook/useFormState';
 import styles from './PriceFilter.module.css';
 
 const PriceFilter = () => {

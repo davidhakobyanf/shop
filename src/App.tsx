@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import Home from './components/Home/Home';
 import Layout from './components/Layout/Layout';
 import NoPage from './components/NoPage/NoPage';
+import './App.css';
 
 function App() {
     return (

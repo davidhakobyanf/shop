@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './CustomList.module.css';
 import { useActiveSelect } from '../hook/useActiveSelect';
 import { CustomListProps } from '../../type/type';
+import styles from './CustomList.module.css';
 
 const CustomList: React.FC<CustomListProps> = ({ items }) => {
     const { handleClick, checkList } = useActiveSelect();

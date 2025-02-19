@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
-import styles from './FilterDropDown.module.css';
+import { brandData } from '../../data/data.ts';
 import FilterModal from '../FIlterModal/FilterModal.tsx';
 import PriceFilter from '../PriceFilter/PriceFilter.tsx';
 import CustomList from '../CustomList/CustomList.tsx';
-import { brandData } from '../../data/data.ts';
+import styles from './FilterDropDown.module.css';
 
 interface FilterDropDownProps {
     value: React.ReactNode;

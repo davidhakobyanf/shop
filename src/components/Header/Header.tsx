@@ -1,7 +1,7 @@
 import Input from '../Input/Input';
 import LogoSvg from '../LogoSvg/LogoSvg';
-import styles from './Header.module.css';
 import { useFormState } from '../hook/useFormState';
+import styles from './Header.module.css';
 
 const Header = () => {
     const { initialValue, handleChange } = useFormState({ search: '' });

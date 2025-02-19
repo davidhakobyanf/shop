@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './ProductCardText.module.css';
 import { CardItemTextType } from '../../type/type';
+import styles from './ProductCardText.module.css';
 
 const ProductCardText: React.FC<CardItemTextType> = ({ name, brand, price, rating, category }) => {
     return (
