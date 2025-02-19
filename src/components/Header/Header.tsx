@@ -5,8 +5,6 @@ import styles from './Header.module.css';
 
 const Header = () => {
     const { initialValue, handleChange } = useFormState({ search: '' });
-    console.log(initialValue, 'initialValue');
-
     return (
         <div className={styles.HeaderContainer}>
             <LogoSvg />

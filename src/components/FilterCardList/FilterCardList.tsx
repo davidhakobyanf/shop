@@ -7,7 +7,6 @@ import styles from './FilterCardList.module.css';
 const FilterCardList: FC = () => {
     const { filterProducts } = useFilter();
     const filteredData = filterProducts(data);
-    console.log(filteredData, 'filteredData');
 
     return (
         <div className={styles.filterBlockContainer}>

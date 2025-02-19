@@ -3,7 +3,7 @@ import styles from './LogoSvg.module.css';
 
 const LogoSvg = () => {
     return (
-        <div className={styles.svgContainer}>
+        <div className={styles.svgContainer} onClick={() => window.location.reload()}>
             <img src={svgLogo} alt='Logo' className={styles.svgLogo} />
         </div>
     );
