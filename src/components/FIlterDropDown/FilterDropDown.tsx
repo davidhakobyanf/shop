@@ -28,9 +28,7 @@ const FilterDropDown: FC<FilterDropDownProps> = ({ icon, value, filter, modal, o
     return (
         <div
             className={`${styles.filterContainer} ${filter ? styles.filterActive : ''}`}
-            style={
-                icon ? { '--icon-url': `url("${icon}")` } : ({ padding: '8px 30px 8px 15px' } as React.CSSProperties)
-            }
+            style={{ padding: '8px 30px 8px 15px' }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={onClick}

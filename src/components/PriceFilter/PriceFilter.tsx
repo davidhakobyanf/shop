@@ -3,12 +3,9 @@ import { useFormState } from '../hook/useFormState';
 import Input from '../Input/Input';
 import styles from './PriceFilter.module.css';
 
-interface priceFIlterType {
-    from: number;
-    to: number;
-}
 const PriceFilter = () => {
-    const { initialValue, handleChange } = useFormState<priceFIlterType>({ from: 0, to: 0 });
+    const { initialValue, handleChange } = useFormState({ from: 0, to: 0 });
+
     console.log(initialValue, 'initialValue');
 
     return (
