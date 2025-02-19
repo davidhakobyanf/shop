@@ -14,7 +14,7 @@ interface FilterDropDownProps {
 }
 
 const FilterDropDown: FC<FilterDropDownProps> = ({ value, filter, modal, onClick }) => {
-    const [isModalOpen, setIsModalOpen] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleMouseEnter = () => {
         setIsModalOpen(true);
