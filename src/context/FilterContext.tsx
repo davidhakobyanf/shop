@@ -1,11 +1,12 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { BrandItem, FilterContextType, FilterState } from '../type/type';
+import { BrandItem, FilterContextType, FilterState, shopItemType } from '../type/type';
 
 const FilterContext = createContext<FilterContextType | null>(null);
 
 interface FilterProviderProps {
     children: ReactNode;
 }
+
 export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
     const [dataFilter, setDataFilter] = useState<FilterState>({
         rating: false,
@@ -39,9 +40,28 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
         }));
     };
 
+    const filterProducts = (products: shopItemType[]): shopItemType[] => {
+        const filteredProducts = products.filter((product) => {
+            const { price, brandCheckList } = dataFilter;
+            if (brandCheckList.length > 0 && !brandCheckList.some((brand) => brand.text === product.brand)) {
+                return false;
+            }
+            const fromPrice = price.from ? parseFloat(price.from) : 0;
+            const toPrice = price.to ? parseFloat(price.to) : Infinity;
+
+            return product.price >= fromPrice && product.price <= toPrice;
+        });
+
+        if (dataFilter.rating) {
+            filteredProducts.sort((a, b) => b.rating - a.rating);
+        }
+
+        return filteredProducts;
+    };
+
     return (
         <FilterContext.Provider
-            value={{ dataFilter, setDataFilter, handlePriceChange, toggleRating, handleBrandClick }}
+            value={{ dataFilter, setDataFilter, handlePriceChange, toggleRating, handleBrandClick, filterProducts }}
         >
             {children}
         </FilterContext.Provider>

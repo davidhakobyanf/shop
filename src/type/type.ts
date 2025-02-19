@@ -1,4 +1,3 @@
-
 export interface filter {
     category: categories[];
     brend: brands[];
@@ -53,5 +52,5 @@ export interface FilterContextType {
     handlePriceChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     toggleRating: () => void;
     handleBrandClick: (item: BrandItem) => void;
+    filterProducts: (products: shopItemType[]) => shopItemType[];
 }
- 
