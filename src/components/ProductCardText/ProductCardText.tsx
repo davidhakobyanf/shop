@@ -7,9 +7,9 @@ const ProductCardText: React.FC<CardItemTextType> = ({ name, brand, price, ratin
         <div className={styles.cardTextContaier}>
             <h2>{name}</h2>
             <p>{brand}</p>
-            <p>{price.toFixed(2)}</p>
-            <p>{rating}</p>
-            <p>{category}</p>
+            <p>Price {price.toFixed(2)}</p>
+            <p>Rating {rating}</p>
+            <p>Category {category}</p>
         </div>
     );
 };
