@@ -26,3 +26,10 @@ export interface CatalogCategory {
     name: string;
     icon: keyof typeof DataSvg;
 }
+export interface ListItem {
+    id: number;
+    text: string;
+}
+export interface CustomListProps {
+    items: ListItem[];
+}

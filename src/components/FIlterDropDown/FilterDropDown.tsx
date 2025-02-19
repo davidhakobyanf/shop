@@ -2,7 +2,8 @@ import React, { FC, useState } from 'react';
 import styles from './FilterDropDown.module.css';
 import FilterModal from '../FIlterModal/FilterModal.tsx';
 import PriceFilter from '../PriceFilter/PriceFilter.tsx';
-import CustomList from '../CustomList/CUstomList.tsx';
+import CustomList from '../CustomList/CustomList.tsx';
+import { brandData } from '../../data/data.ts';
 
 interface FilterDropDownProps {
     value: React.ReactNode;
@@ -13,7 +14,7 @@ interface FilterDropDownProps {
 }
 
 const FilterDropDown: FC<FilterDropDownProps> = ({ icon, value, filter, modal, onClick }) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(true);
 
     const handleMouseEnter = () => {
         setIsModalOpen(true);
@@ -23,11 +24,7 @@ const FilterDropDown: FC<FilterDropDownProps> = ({ icon, value, filter, modal, o
         setIsModalOpen(false);
     };
     console.log(icon, 'icon');
-    const items = [
-        { id: 1, text: 'Элемент 1', onClick: () => console.log('Вы нажали на 1') },
-        { id: 2, text: 'Элемент 2', onClick: () => console.log('Вы нажали на 2') },
-        { id: 3, text: 'Элемент 3', onClick: () => console.log('Вы нажали на 3') },
-    ];
+
     return (
         <div
             className={`${styles.filterContainer} ${filter ? styles.filterActive : ''}`}
@@ -41,8 +38,7 @@ const FilterDropDown: FC<FilterDropDownProps> = ({ icon, value, filter, modal, o
             {value}
             {modal && (
                 <FilterModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-                    {/* <PriceFilter /> */}
-                    <CustomList items={items} />
+                    {value === 'Цена' ? <PriceFilter /> : <CustomList items={brandData} />}
                 </FilterModal>
             )}
         </div>
