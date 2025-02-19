@@ -1,3 +1,4 @@
+
 export interface filter {
     category: categories[];
     brend: brands[];
@@ -30,3 +31,27 @@ export interface ListItem {
 export interface CustomListProps {
     items: ListItem[];
 }
+export interface PriceRange {
+    from: string;
+    to: string;
+}
+
+export interface BrandItem {
+    id: number;
+    text: string;
+}
+
+export interface FilterState {
+    rating: boolean;
+    price: PriceRange;
+    brandCheckList: BrandItem[];
+}
+
+export interface FilterContextType {
+    dataFilter: FilterState;
+    setDataFilter: React.Dispatch<React.SetStateAction<FilterState>>;
+    handlePriceChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    toggleRating: () => void;
+    handleBrandClick: (item: BrandItem) => void;
+}
+ 

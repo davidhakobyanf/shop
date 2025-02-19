@@ -15,7 +15,7 @@ const Header = () => {
                 value={initialValue.search}
                 variant='searchInput'
                 onChange={handleChange}
-                name={'name'}
+                name={'search'}
             />
         </div>
     );

@@ -1,20 +1,32 @@
 import Button from '../Button/Button';
 import Input from '../Input/Input';
-import { useFormState } from '../hook/useFormState';
+import { useFilter } from '../../context/FilterContext';
 import styles from './PriceFilter.module.css';
 
 const PriceFilter = () => {
-    const { initialValue, handleChange } = useFormState({ from: 0, to: 0 });
-
-    console.log(initialValue, 'initialValue');
+    const { dataFilter, handlePriceChange } = useFilter();
 
     return (
         <div className={styles.priceFilterContainer}>
             <div className={styles.priceContainer}>
                 <p>От</p>
                 <p>До</p>
-                <Input variant={'defInput'} type='number' placeholder='0' name={'from'} onChange={handleChange} />
-                <Input variant={'defInput'} type='number' placeholder='0' name={'to'} onChange={handleChange} />
+                <Input
+                    variant='defInput'
+                    type='number'
+                    placeholder='0'
+                    name='from'
+                    value={dataFilter.price.from}
+                    onChange={handlePriceChange}
+                />
+                <Input
+                    variant='defInput'
+                    type='number'
+                    placeholder='0'
+                    name='to'
+                    value={dataFilter.price.to}
+                    onChange={handlePriceChange}
+                />
             </div>
             <div>
                 <Button value='Готово' />
@@ -22,4 +34,5 @@ const PriceFilter = () => {
         </div>
     );
 };
+
 export default PriceFilter;

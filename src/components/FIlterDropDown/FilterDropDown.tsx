@@ -13,7 +13,7 @@ interface FilterDropDownProps {
     onClick?: () => void;
 }
 
-const FilterDropDown: FC<FilterDropDownProps> = ({ icon, value, filter, modal, onClick }) => {
+const FilterDropDown: FC<FilterDropDownProps> = ({ value, filter, modal, onClick }) => {
     const [isModalOpen, setIsModalOpen] = useState(true);
 
     const handleMouseEnter = () => {
@@ -23,7 +23,6 @@ const FilterDropDown: FC<FilterDropDownProps> = ({ icon, value, filter, modal, o
     const handleMouseLeave = () => {
         setIsModalOpen(false);
     };
-    console.log(icon, 'icon');
 
     return (
         <div
