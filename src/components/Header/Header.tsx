@@ -1,19 +1,24 @@
 import Input from '../Input/Input';
 import LogoSvg from '../LogoSvg/LogoSvg';
-import { useFormState } from '../hook/useFormState';
+import { useFilter } from '../../context/FilterContext';
 import styles from './Header.module.css';
 
 const Header = () => {
-    const { initialValue, handleChange } = useFormState({ search: '' });
+    const { dataFilter, handleSearch } = useFilter();
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        handleSearch(e.target.value);
+    };
+
     return (
         <div className={styles.HeaderContainer}>
             <LogoSvg />
             <Input
-                placeholder={'Найти на Wildberries' as string}
-                value={initialValue.search}
+                placeholder='Найти на Wildberries'
+                value={dataFilter.searchQuery}
                 variant='searchInput'
                 onChange={handleChange}
-                name={'search'}
+                name='search'
             />
         </div>
     );

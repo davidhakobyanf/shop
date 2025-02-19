@@ -44,6 +44,7 @@ export interface FilterState {
     rating: boolean;
     price: PriceRange;
     brandCheckList: BrandItem[];
+    searchQuery: string;
 }
 
 export interface FilterContextType {
@@ -53,4 +54,5 @@ export interface FilterContextType {
     toggleRating: () => void;
     handleBrandClick: (item: BrandItem) => void;
     filterProducts: (products: shopItemType[]) => shopItemType[];
+    handleSearch: (query: string) => void;
 }

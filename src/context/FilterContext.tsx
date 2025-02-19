@@ -12,6 +12,7 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
         rating: false,
         price: { from: '', to: '' },
         brandCheckList: [],
+        searchQuery: '',
     });
 
     console.log(dataFilter, 'dataFilter');
@@ -39,21 +40,41 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
                 : [...prev.brandCheckList, item],
         }));
     };
-
+    const handleSearch = (query: string) => {
+        setDataFilter((prev) => ({
+            ...prev,
+            searchQuery: query,
+        }));
+    };
     const filterProducts = (products: shopItemType[]): shopItemType[] => {
-        const filteredProducts = products.filter((product) => {
-            const { price, brandCheckList } = dataFilter;
+        let filteredProducts = products.filter((product) => {
+            const { price, brandCheckList, searchQuery } = dataFilter;
+
             if (brandCheckList.length > 0 && !brandCheckList.some((brand) => brand.text === product.brand)) {
                 return false;
             }
+
             const fromPrice = price.from ? parseFloat(price.from) : 0;
             const toPrice = price.to ? parseFloat(price.to) : Infinity;
 
-            return product.price >= fromPrice && product.price <= toPrice;
+            if (product.price < fromPrice || product.price > toPrice) return false;
+
+            if (searchQuery) {
+                const lowerQuery = searchQuery.toLowerCase();
+                if (
+                    !product.name.toLowerCase().includes(lowerQuery) &&
+                    !product.brand.toLowerCase().includes(lowerQuery) &&
+                    !product.category.toLowerCase().includes(lowerQuery)
+                ) {
+                    return false;
+                }
+            }
+
+            return true;
         });
 
         if (dataFilter.rating) {
-            filteredProducts.sort((a, b) => b.rating - a.rating);
+            filteredProducts = filteredProducts.sort((a, b) => b.rating - a.rating);
         }
 
         return filteredProducts;
@@ -61,7 +82,15 @@ export const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
 
     return (
         <FilterContext.Provider
-            value={{ dataFilter, setDataFilter, handlePriceChange, toggleRating, handleBrandClick, filterProducts }}
+            value={{
+                dataFilter,
+                setDataFilter,
+                handlePriceChange,
+                toggleRating,
+                handleSearch,
+                handleBrandClick,
+                filterProducts,
+            }}
         >
             {children}
         </FilterContext.Provider>
