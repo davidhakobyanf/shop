@@ -9,14 +9,7 @@ interface InputType extends HTMLAttributes<HTMLInputElement> {
     placeholder?: string;
 }
 
-const Input: FC<InputType> = ({
-    variant,
-    placeholder,
-    type = 'text', // По умолчанию "text"
-    name,
-    value,
-    ...props
-}) => {
+const Input: FC<InputType> = ({ variant, placeholder, type = 'text', name, value, ...props }) => {
     return (
         <input className={styles[variant]} placeholder={placeholder} type={type} name={name} value={value} {...props} />
     );

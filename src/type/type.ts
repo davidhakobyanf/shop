@@ -22,7 +22,6 @@ export type CardItem = Omit<shopItemType, 'id'>;
 export interface CatalogCategory {
     id: number;
     name: string;
-    icon: keyof typeof DataSvg;
 }
 export interface ListItem {
     id: number;

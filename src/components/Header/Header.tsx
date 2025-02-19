@@ -4,7 +4,7 @@ import styles from './Header.module.css';
 import { useFormState } from '../hook/useFormState';
 
 const Header = () => {
-    const { initialValue, handleChange } = useFormState({ name: '' });
+    const { initialValue, handleChange } = useFormState({ search: '' });
     console.log(initialValue, 'initialValue');
 
     return (
@@ -12,7 +12,7 @@ const Header = () => {
             <LogoSvg />
             <Input
                 placeholder={'Найти на Wildberries' as string}
-                value={initialValue.name}
+                value={initialValue.search}
                 variant='searchInput'
                 onChange={handleChange}
                 name={'name'}
