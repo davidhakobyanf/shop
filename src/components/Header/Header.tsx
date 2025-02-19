@@ -1,13 +1,21 @@
+import { useEffect, useState } from 'react';
 import Input from '../Input/Input';
 import LogoSvg from '../LogoSvg/LogoSvg';
 import { useFilter } from '../../context/FilterContext';
 import styles from './Header.module.css';
+import { useDebounce } from '../hook/useDebounce';
 
 const Header = () => {
     const { dataFilter, handleSearch } = useFilter();
+    const [searchTerm, setSearchTerm] = useState(dataFilter.searchQuery);
+    const debouncedSearch = useDebounce(searchTerm, 500);
+
+    useEffect(() => {
+        handleSearch(debouncedSearch);
+    }, [debouncedSearch]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        handleSearch(e.target.value);
+        setSearchTerm(e.target.value);
     };
 
     return (
@@ -15,7 +23,7 @@ const Header = () => {
             <LogoSvg />
             <Input
                 placeholder='Найти на Wildberries'
-                value={dataFilter.searchQuery}
+                value={searchTerm}
                 variant='searchInput'
                 onChange={handleChange}
                 name='search'
