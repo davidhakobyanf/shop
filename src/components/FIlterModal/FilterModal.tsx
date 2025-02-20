@@ -1,35 +1,20 @@
-import React, { useEffect, useRef } from 'react';
 import styles from './FilterModal.module.css';
+import useOutSideClick from '../hook/useOutSideClick';
 
-interface FilterModalProps {
-    isOpen: boolean;
-    onClose: () => void;
+export interface FilterModalProps {
     children: React.ReactNode;
+    label: React.ReactNode;
 }
 
-const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, children }) => {
-    const modalRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-                onClose();
-            }
-        };
-
-        if (isOpen) {
-            document.addEventListener('mousedown', handleClickOutside);
-        }
-
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [isOpen, onClose]);
-
+const FilterModal: React.FC<FilterModalProps> = ({ children, label }) => {
+    const { isOpenOutSide, open, close, dropDownRef } = useOutSideClick();
     return (
-        <div ref={modalRef} className={styles.modal} style={{ display: isOpen ? 'flex' : 'none' }}>
-            <div className={styles.buffer} />
-            {children}
+        <div className={`${styles.filterContainer} ${styles.filterActive}`} onMouseEnter={open} onMouseLeave={close}>
+            <span>{label}</span>
+            <div ref={dropDownRef} className={styles.modal} style={{ display: isOpenOutSide ? 'flex' : 'none' }}>
+                <div className={styles.buffer} />
+                {children}
+            </div>
         </div>
     );
 };

@@ -3,10 +3,16 @@ import { data, imagePath } from '../../data/data';
 import { useFilter } from '../../context/FilterContext';
 import ProductCard from '../ProductCard/ProductCard';
 import styles from './FilterCardList.module.css';
+import { useLoading } from '../hook/useLoading';
+import Loading from '../Loading/Loading';
 
 const FilterCardList: FC = () => {
     const { filterProducts } = useFilter();
     const filteredData = filterProducts(data);
+    const isLoading = useLoading();
+    if (isLoading) {
+        return <Loading />;
+    }
 
     return (
         <div className={styles.filterBlockContainer}>

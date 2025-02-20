@@ -11,7 +11,7 @@ const CatalogCategoryList: React.FC = () => {
         <div className={styles.catalogContainer}>
             {catalogFilter.map(({ id, name }) =>
                 name !== 'Рейтинг' ? (
-                    <FilterDropDown key={id} value={name} filter={true} modal={true} />
+                    <FilterDropDown key={id} value={name} filter={true} />
                 ) : (
                     <ToggleButton key={id} label='Рейтинг' checked={dataFilter.rating} onChange={toggleRating} />
                 ),
