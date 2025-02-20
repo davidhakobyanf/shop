@@ -1,4 +1,3 @@
-import Button from '../Button/Button';
 import Input from '../Input/Input';
 import { useFilter } from '../../context/FilterContext';
 import styles from './PriceFilter.module.css';
@@ -27,9 +26,6 @@ const PriceFilter = () => {
                     value={dataFilter.price.to}
                     onChange={handlePriceChange}
                 />
-            </div>
-            <div>
-                <Button value='Готово' />
             </div>
         </div>
     );

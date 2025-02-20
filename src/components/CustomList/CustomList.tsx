@@ -6,7 +6,6 @@ import styles from './CustomList.module.css';
 const CustomList: React.FC<CustomListProps> = ({ items }) => {
     const { dataFilter, handleBrandClick } = useFilter();
     const { brandCheckList } = dataFilter;
-
     return (
         <ul className={styles.list}>
             {items.map((item) => (
